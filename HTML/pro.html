@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Type Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 0, 0);
+        }
+
+        ::-webkit-scrollbar {
+            scrollbar-width: none;
+        }
+
+        .container {
+            backdrop-filter: blur(14px);
+            padding: 2.5em;
+            color: greenyellow;
+            border-radius: 15px;
+            box-shadow: 0 0 20px greenyellow;
+            width: 300px;
+            text-align: left;
+            margin-left: 1.3em;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]::placeholder {
+            color: #aaa;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(153, 255, 0);
+            border: none;
+            border-radius: 4px;
+            color: black;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: 14px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            color: greenyellow;
+            border: 2px solid greenyellow;
+        }
+
+        #results {
+            opacity: 0;
+            transition: all 1s ease;
+            margin-top: 20px;
+            height: 100%;
+            /* Ensure it adjusts based on content */
+            width: 100%;
+            background: url('../HTML/ASSETS/dataBG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: greenyellow;
+            display: none;
+            padding: 15px;
+        }
+
+        .plan {
+            display: flex;
+        }
+
+        #results.show {
+            display: block;
+            opacity: 1;
+        }
+    
+
+        .plan1 {
+            margin-top: 2em;
+            border-radius: 2em;
+            background-color: rgb(56, 56, 56);
+            display: grid;
+            place-items: center;
+            width: 20em;
+            height: 14em;
+            opacity: 0;
+            animation: fadeInUp 1.25s 0.5s ease;
+            animation-fill-mode: forwards;
+        }
+
+        .plan2 {
+            border-radius: 2em;
+            background-color: rgb(56, 56, 56);
+            display: grid;
+            padding: 1.8em;
+            width: 20em;
+            height: 27em;
+            opacity: 0;
+            margin-top: 3em;
+            animation: fadeInUp 1.25s 1.5s ease;
+            animation-fill-mode: forwards;
+        }
+
+        .plan3 {
+            border-radius: 2em;
+            background-color: rgb(56, 56, 56);
+            display: grid;
+            padding: 1em;
+            width: 20em;
+            height: 19em;
+            opacity: 0;
+            margin-top: 3em;
+            animation: fadeInUp 1.25s 2s ease;
+            animation-fill-mode: forwards;
+        }
+
+        .plan4 {
+            border-radius: 2em;
+            background-color: rgb(56, 56, 56);
+            display: grid;
+            padding: 1em;
+            width: 20em;
+            height: 23em;
+            opacity: 0;
+            margin-top: 3em;
+            animation: fadeInUp 1.25s 1.75s ease;
+            animation-fill-mode: forwards;
+        }
+
+        .cn1,
+        .cn2 {
+            display: grid;
+            justify-content: space-between;
+            margin-left: 15em;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+            /* Remove default list styling */
+        }
+
+        ul li {
+            margin-bottom: 12px;
+        }
+
+        ul li p {
+            margin: 0;
+            /* Ensure paragraphs within li have no extra margin */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Body Type Form</h1>
+        <form id="bodyTypeForm" action="/submit" method="POST">
+            <label for="bodyType">Choose your body type:</label>
+            <select id="bodyType" name="bodyType">
+                <option value="ectomorph" title="Fast Metabolism, Slim Physique">Ectomorph</option>
+                <option value="mesomorph" title="Athletic, Muscular Physique">Mesomorph</option>
+                <option value="endomorph" title="Slower Metabolism, Rounder Physique">Endomorph</option>
+            </select>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" placeholder="Enter your weight" min="30" max="105" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" placeholder="Enter your height" min="140" max="200" required>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" placeholder="Enter Your Age" required>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="male" required> Male
+            <input type="radio" name="gender" id="female" value="female" required> Female
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="results">
+
+        <div class="plan">
+
+            <div class="cn1">
+                <div class="plan1">
+
+                    <h2 id="customPlans">Daily Nutrient Intake</h2>
+                    <ul>
+                        <li>
+                            <p id="calory"></p>
+                        </li>
+                        <li>
+                            <p id="carbs"></p>
+                        </li>
+                        <li>
+                            <p id="proteins"></p>
+                        </li>
+                        <li>
+                            <p id="fats"></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan2">
+
+                    <h2>Daily Diet Structure: </h2>
+                    <h3>Frequency: 6 Meals Everyday</h3>
+                    <ul>
+                        <li>
+                            <p id="breakfast"></p>
+                        </li>
+                        <li>
+                            <p id="midmorning"></p>
+                        </li>
+                        <li>
+                            <p id="lunch"></p>
+                        </li>
+                        <li>
+                            <p id="afternoon"></p>
+                        </li>
+                        <li>
+                            <p id="evening"></p>
+                        </li>
+                        <li>
+                            <p id="dinner"></p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="cn2">
+                <div class="plan3">
+                    <h2>Workout Plan Structure: </h2>
+                    <ul id="workoutList">
+                    </ul>
+                    
+                </div>
+                <div class="plan4">
+
+                    <h2>Workout Flow:</h2>
+                    <h3 id="frequency"></h3>
+                    <ul>
+                        <li>
+                            <p id="day1"></p>
+                        </li>
+                        <li>
+                            <p id="day2"></p>
+                        </li>
+                        <li>
+                            <p id="day3"></p>
+                        </li>
+                        <li>
+                            <p id="day4"></p>
+                        </li>
+                        <li>
+                            <p id="day5"></p>
+                        </li>
+                        <li>
+                            <p id="day6"></p>
+                        </li>
+                        <li>
+                            <p id="day7"></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../HTML/JS/data.js"></script>
+</body>
+
+</html>

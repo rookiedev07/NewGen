@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+body{
+    background-color: black;
+}
+::-webkit-scrollbar{
+    scrollbar-width: none;
+}
+.loader-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 140%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    background-color: black;
+    position: absolute;
+    animation: change 1s 9s;
+    animation-fill-mode: forwards;
+    margin-top: -3em;
+    z-index: 2;
+}
+.loader-animation img{
+    margin-left: 2em;
+    opacity: 0;
+    transform: scale(1);
+    animation: fadeIn 2s 2s ease forwards, logoShift 2s 5s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.animate {
+    opacity: 0;
+    font-size: 2rem;
+    font-family: "Protest Guerrilla";
+    color: greenyellow;
+    letter-spacing: 2px;
+    width: 8em;
+    animation: fadeIn 2s 2s ease forwards, textShift 2s 5s ease forwards;
+}
+@keyframes textShift{
+    to{
+        opacity: 0;
+    }
+}
+@keyframes logoShift{
+    to{
+        opacity: 0;
+        }
+}
+@keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(359deg);
+    }
+  }
+  .spinner-box {
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    opacity: 1;
+    margin-top: 25%;
+    margin-left: 45%;
+  }
+  .circle-border {
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: greenyellow;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 33%, greenyellow 100%);
+    animation: spin .8s linear 0s infinite;
+  }
+  
+  .circle-core {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 50%;
+  }

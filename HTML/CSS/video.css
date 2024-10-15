@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+::-webkit-scrollbar{
+    scrollbar-width: none;
+}
+body{
+    background-color: black;
+    position: relative;
+}
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 110vh;
+    width: 105%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3em;
+    z-index: 2;
+    overflow-x: inherit;
+}
+.container img{
+    margin-left: -19em;
+    position: fixed;
+    opacity: 0;
+    transform: scale(1);
+    animation: fadeIn 2s 2s ease forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.animate {
+    opacity: 0;
+    font-size: 2rem;
+    font-family: "Protest Guerrilla";
+    color: greenyellow;
+    letter-spacing: 2px;
+    width: 10em;
+    margin-left: 4em;
+    position: fixed;
+    animation: fadeIn 2s 2s ease forwards;
+    animation-fill-mode: forwards;
+}
+.animateIt{
+    animation: logo 3s 3s ease forwards;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140vh;
+}
+.explore{
+    all: unset;
+    z-index: 999;
+    color: white;
+    height: 4em;
+    width: 4.2em;
+    position: fixed;
+    border-radius: 40%;
+    padding: 6px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    opacity: 0;
+    text-align: center;
+    animation: fadeIn 1s 4s forwards;
+}
+.explore:hover{
+    border: 1px solid greenyellow;
+    border-radius: 55%;
+    padding: 6px;
+}
+@keyframes blurIn {
+    from {
+        filter: blur(30px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes blurOut {
+    from {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    to {
+        filter: blur(30px);
+        opacity: 0;
+    }
+}
+
+.blurIn {
+    animation: blurIn 1s 1s ease forwards;
+}
+
+.blurOut {
+    animation: blurOut 1s ease forwards;
+}
+
+#overlayText {
+    position: absolute;
+    left: 1.5em;
+    padding-left: 1em;
+    color: white;
+    height: 100%;
+    width: 33em;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0; /* Ensure visibility */
+    padding-top: 61em;
+    z-index: 1001; /* Higher than the pseudo-element */
+}
+
+#overlayText2 {
+    position: relative;
+    left: 1.5em;
+    padding-left: 1em;
+    color: white;
+    height: 100%;
+    text-shadow: 32px 32px 54px black;
+    width: 33em;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0; /* Ensure visibility */
+    padding-top: 27em;
+    z-index: 1001; /* Higher than t he pseudo-element */
+    float: left;
+    text-align: left;
+}
+#overlayText3 {
+    position: absolute;
+    top:1em;
+    left: 29.5em;
+    padding-left: 1em;
+    color: white;
+    height: 100%;
+    text-shadow: 32px 32px 54px black;
+    width: 33em;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0; /* Ensure visibility */
+    padding-top: 27em;
+    z-index: 1001; /* Higher than t he pseudo-element */
+    float: left;
+    text-align: left;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+    overflow: hidden;
+  }
+  
+
+.container1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 100vh;
+    width: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+.container2{
+    position: fixed;
+    top: 0;
+    left: -33em;
+    bottom: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+#overlayText2::after{
+    content: "";
+    position: absolute;
+    top: -1.2em;
+    left: -1.2em;
+    width: 250%;
+    height: 65%;
+    background-image: linear-gradient(to top, rgb(0, 0, 0,10), rgb(0, 0, 0,0));
+    z-index: -1; /* Ensure the gradient is behind any content */
+}
+#overlayText::after{
+    content: "";
+    position: absolute;
+    top: -1.2em;
+    left: -1.2em;
+    width: 250%;
+    height: 75%;
+    background-image: linear-gradient(to top, rgb(0, 0, 0,0.7), rgb(0, 0, 0,0));
+    z-index: -1; /* Ensure the gradient is behind any content */
+}
+
+#overlayText3::after{
+    content: "";
+    position: absolute;
+    top: -1.2em;
+    left: -1.2em;
+    width: 280%;
+    height: 75%;
+    background-image: linear-gradient(to top, rgb(0, 0, 0,0.7), rgb(0, 0, 0,0));
+    z-index: -1; /* Ensure the gradient is behind any content */
+}
+#myVideo, #myVideo2, #myVideo3 {
+    position: inherit;
+    width: 120%;
+    height: 100%;
+    top: 0;
+    display: none;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    left: 0.5em;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#targetSection {
+    padding: 20px;
+    display: block;
+    background-color: #000000;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    margin-left: -1.6em;
+}
+#targetSection video{
+    top: 0;
+    left: -0.6em;
+    position: inherit;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+@keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(359deg);
+    }
+  }
+  .spinner-box {
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    opacity: 0;
+    margin-top: -53%;
+    margin-left: 47%;
+    position: fixed;
+  }
+  .circle-border {
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: greenyellow;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 33%, greenyellow 100%);
+    animation: spin .8s linear 0s infinite;
+  }
+  
+  .circle-core {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 50%;
+  }
